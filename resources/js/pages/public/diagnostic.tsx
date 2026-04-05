@@ -5,9 +5,6 @@ import {
     Search, 
     Activity, 
     Database, 
-    ShieldCheck, 
-    Zap,
-    Wrench,
     CheckCircle2
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';

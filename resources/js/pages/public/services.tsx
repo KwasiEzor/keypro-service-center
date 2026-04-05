@@ -15,7 +15,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
-import { quote } from '@/routes';
+import { home, quote } from '@/routes';
 import type { PublicBrand, PublicService } from '@/types';
 
 type Props = {

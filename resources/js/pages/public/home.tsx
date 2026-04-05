@@ -59,17 +59,9 @@ const fadeInUp = {
     transition: { duration: 0.5 }
 };
 
-const stagger = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true },
-    transition: { staggerChildren: 0.1 }
-};
-
 export default function Home({
     stats,
     services,
-    brands,
     projects,
     processSteps,
     pricingPlans,

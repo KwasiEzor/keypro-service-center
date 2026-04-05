@@ -4,22 +4,11 @@ import {
     Truck, 
     MapPin, 
     Clock, 
-    Phone, 
-    CheckCircle2, 
-    Zap,
-    Navigation,
     ShieldCheck
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { quote } from '@/routes';
-
-const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5 }
-};
 
 export default function Mobile() {
     return (
@@ -100,7 +89,7 @@ export default function Mobile() {
                             { step: '02', title: 'Localisation', desc: 'Validation de votre position et de la marque du véhicule.' },
                             { step: '03', title: 'Déploiement', desc: 'Envoi immédiat de l\'unité mobile la plus proche.' },
                             { step: '04', title: 'Résolution', desc: 'Reproduction ou programmation sur place en moins de 45 min.' },
-                        ].map((item, idx) => (
+                        ].map((item) => (
                             <div key={item.step} className="space-y-6 relative group">
                                 <span className="font-display text-6xl font-black text-white/10 group-hover:text-primary transition-colors">{item.step}</span>
                                 <div className="space-y-2">
