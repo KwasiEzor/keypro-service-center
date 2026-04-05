@@ -76,7 +76,7 @@ export default function PublicLayout({
                             href={home()}
                             className="flex items-center"
                         >
-                            <AppLogoIcon className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all" />
+                            <AppLogoIcon className="h-32 sm:h-48 md:h-64 lg:h-80 w-auto object-contain transition-all duration-500" />
                         </Link>
 
                         <nav className="hidden items-center gap-2 md:flex">
@@ -91,7 +91,7 @@ export default function PublicLayout({
                                         key={item.label}
                                         href={item.href}
                                         className={cn(
-                                            "px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all",
+                                            "px-4 py-2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all",
                                             isActive
                                                 ? "bg-primary text-white"
                                                 : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/5"
@@ -182,7 +182,7 @@ export default function PublicLayout({
                     <div className="grid gap-16 lg:grid-cols-2">
                         <div className="space-y-8">
                             <Link href={home()} className="flex items-center">
-                                <AppLogoIcon className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain transition-all" />
+                                <AppLogoIcon className="h-24 sm:h-28 md:h-32 lg:h-40 w-auto object-contain transition-all" />
                             </Link>
                             <p className="max-w-md text-lg font-medium leading-relaxed text-slate-400">
                                 Infrastructure technique de pointe pour la maintenance, le diagnostic et l'optimisation de vos équipements industriels et digitaux.
