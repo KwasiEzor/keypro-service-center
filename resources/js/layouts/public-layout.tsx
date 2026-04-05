@@ -6,6 +6,7 @@ import {
     User as UserIcon,
     Menu
 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import AppLogoIcon from '@/components/app-logo-icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -51,6 +52,11 @@ export default function PublicLayout({
     const page = usePage<SharedProps>();
     const currentPath = page.url.split('?')[0];
     const user = page.props.auth.user;
+    const [year, setYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
 
     return (
         <div className="min-h-screen bg-white text-slate-950 dark:bg-[#0a0a0a] dark:text-white">
@@ -220,7 +226,7 @@ export default function PublicLayout({
                     </div>
                     <div className="mt-24 border-t border-white/5 pt-8 flex flex-col justify-between gap-6 md:flex-row md:items-center">
                         <p className="text-xs font-bold uppercase tracking-widest text-slate-600">
-                            © {new Date().getFullYear()} KeyPro Service Center. Système Qualité Certifié.
+                            © <span>{year ?? '...'}</span> KeyPro Service Center. Système Qualité Certifié.
                         </p>
                         <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                             <Link href="#" className="hover:text-primary">Mentions Légales</Link>
