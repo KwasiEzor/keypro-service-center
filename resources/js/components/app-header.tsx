@@ -97,7 +97,7 @@ export function AppHeader({ breadcrumbs = [] }: Props) {
                         prefetch
                         className="flex items-center"
                     >
-                        <AppLogoIcon className="h-10 w-auto object-contain" />
+                        <AppLogoIcon className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all" />
                     </Link>
 
                     {/* Desktop Navigation */}

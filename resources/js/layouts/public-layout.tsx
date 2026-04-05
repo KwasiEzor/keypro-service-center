@@ -76,7 +76,7 @@ export default function PublicLayout({
                             href={home()}
                             className="flex items-center"
                         >
-                            <AppLogoIcon className="h-12 w-auto object-contain" />
+                            <AppLogoIcon className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all" />
                         </Link>
 
                         <nav className="hidden items-center gap-2 md:flex">
@@ -127,7 +127,7 @@ export default function PublicLayout({
                                 <SheetContent side="right" className="w-[300px] bg-white dark:bg-[#0a0a0a] p-0 border-l-4 border-primary">
                                     <SheetHeader className="p-6 border-b border-slate-100 dark:border-white/5">
                                         <SheetTitle className="text-left">
-                                            <AppLogoIcon className="h-10 w-auto object-contain" />
+                                            <AppLogoIcon className="h-12 sm:h-14 w-auto object-contain" />
                                         </SheetTitle>
                                     </SheetHeader>
                                     <nav className="flex flex-col py-4">
@@ -182,7 +182,7 @@ export default function PublicLayout({
                     <div className="grid gap-16 lg:grid-cols-2">
                         <div className="space-y-8">
                             <Link href={home()} className="flex items-center">
-                                <AppLogoIcon className="h-16 w-auto object-contain" />
+                                <AppLogoIcon className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain transition-all" />
                             </Link>
                             <p className="max-w-md text-lg font-medium leading-relaxed text-slate-400">
                                 Infrastructure technique de pointe pour la maintenance, le diagnostic et l'optimisation de vos équipements industriels et digitaux.
