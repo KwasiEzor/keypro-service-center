@@ -71,15 +71,15 @@ export default function PublicLayout({
 
             <div className="relative">
                 <header className="sticky top-0 z-50 border-b-2 border-primary/10 bg-white/80 backdrop-blur-md dark:border-white/5 dark:bg-[#0a0a0a]/80">
-                    <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-8">
+                    <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-1 lg:px-8">
                         <Link
                             href={home()}
                             className="flex items-center"
                         >
-                            <AppLogoIcon className="h-32 sm:h-48 md:h-64 lg:h-80 w-auto object-contain transition-all duration-500" />
+                            <AppLogoIcon className="h-26 w-auto object-contain transition-all duration-500" />
                         </Link>
 
-                        <nav className="hidden items-center gap-2 md:flex">
+                        <nav className="hidden items-center gap-px md:flex border-x border-slate-100 dark:border-white/5 mx-4">
                             {navigation.map((item) => {
                                 const isActive =
                                     currentPath === item.href.url ||
@@ -91,10 +91,10 @@ export default function PublicLayout({
                                         key={item.label}
                                         href={item.href}
                                         className={cn(
-                                            "px-4 py-2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all",
+                                            "px-4 py-4 text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap transition-all border-b-2",
                                             isActive
-                                                ? "bg-primary text-white"
-                                                : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/5"
+                                                ? "bg-primary/5 text-primary border-primary"
+                                                : "text-slate-900 border-transparent hover:bg-slate-50 dark:text-white dark:hover:bg-white/5"
                                         )}
                                     >
                                         {item.label}
@@ -124,7 +124,7 @@ export default function PublicLayout({
                                         <span className="sr-only">Toggle menu</span>
                                     </Button>
                                 </SheetTrigger>
-                                <SheetContent side="right" className="w-[300px] bg-white dark:bg-[#0a0a0a] p-0 border-l-4 border-primary">
+                                <SheetContent side="right" className="w-75 bg-white dark:bg-[#0a0a0a] p-0 border-l-4 border-primary">
                                     <SheetHeader className="p-6 border-b border-slate-100 dark:border-white/5">
                                         <SheetTitle className="text-left">
                                             <AppLogoIcon className="h-12 sm:h-14 w-auto object-contain" />
@@ -182,7 +182,7 @@ export default function PublicLayout({
                     <div className="grid gap-16 lg:grid-cols-2">
                         <div className="space-y-8">
                             <Link href={home()} className="flex items-center">
-                                <AppLogoIcon className="h-24 sm:h-28 md:h-32 lg:h-40 w-auto object-contain transition-all" />
+                                <AppLogoIcon className="h-32 md:h-40 lg:w-auto object-contain transition-all brightness-0 invert" />
                             </Link>
                             <p className="max-w-md text-lg font-medium leading-relaxed text-slate-400">
                                 Infrastructure technique de pointe pour la maintenance, le diagnostic et l'optimisation de vos équipements industriels et digitaux.

@@ -102,13 +102,13 @@ export default function Home({
                             Centre de maintenance technique industriel et digital. Nous transformons vos pannes en opérations pilotées, qualifiées et garanties.
                         </p>
 
-                        <div className="flex flex-wrap gap-4 pt-4">
-                            <Button asChild size="lg" className="h-14 px-10 text-base">
+                        <div className="flex flex-wrap gap-4 pt-4 relative z-20">
+                            <Button asChild size="lg" className="h-14 px-10 text-sm font-black uppercase tracking-[0.2em] bg-[#e01e2f] text-white hover:bg-white hover:text-black transition-all border-none rounded-none">
                                 <Link href={quote()}>
                                     Lancer une demande <ArrowRight className="ml-2 size-5" />
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg" className="h-14 border-white/20 px-10 text-base text-white hover:bg-white hover:text-black">
+                            <Button asChild variant="outline" size="lg" className="h-14 px-10 text-sm font-black uppercase tracking-[0.2em] border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-all rounded-none">
                                 <Link href={servicesPage()}>Catalogue Services</Link>
                             </Button>
                         </div>
@@ -154,16 +154,16 @@ export default function Home({
                 <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
                     <div className="relative grid grid-cols-2 gap-4">
                         <div className="space-y-4 pt-12">
-                            <motion.div {...fadeInUp} className="aspect-square overflow-hidden bg-slate-100">
-                                <img src="https://images.unsplash.com/photo-159742324403d-d19504ba2f47?auto=format&fit=crop&q=80&w=800" alt="Detail 1" className="h-full w-full object-cover grayscale" />
+                            <motion.div {...fadeInUp} className="aspect-square overflow-hidden bg-slate-900 border border-white/5">
+                                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800" alt="Diagnostic" className="h-full w-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
                             </motion.div>
-                            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="aspect-[3/4] overflow-hidden bg-slate-100">
-                                <img src="https://images.unsplash.com/photo-1530124560676-574332f056d3?auto=format&fit=crop&q=80&w=800" alt="Detail 2" className="h-full w-full object-cover" />
+                            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="aspect-[3/4] overflow-hidden bg-slate-900 border border-white/5">
+                                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Key Pro" className="h-full w-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
                             </motion.div>
                         </div>
                         <div className="space-y-4">
-                            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="aspect-[3/4] overflow-hidden bg-slate-100">
-                                <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&q=80&w=800" alt="Detail 3" className="h-full w-full object-cover" />
+                            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="aspect-[3/4] overflow-hidden bg-slate-900 border border-white/5">
+                                <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&q=80&w=800" alt="Electronics" className="h-full w-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
                             </motion.div>
                             <div className="relative aspect-square overflow-hidden bg-primary p-8 text-white">
                                 <p className="font-display text-6xl font-extrabold">15+</p>
@@ -325,8 +325,22 @@ export default function Home({
                                 </div>
                             </motion.div>
                         )) : (
-                            [1, 2, 3].map((i) => (
-                                <div key={i} className="aspect-[4/5] bg-slate-200 dark:bg-white/5 animate-pulse" />
+                            [
+                                { title: "ECU BMW Serie 5", cat: "Électronique", img: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800" },
+                                { title: "Double Clé Mercedes", cat: "Reproduction", img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" },
+                                { title: "Diag Range Rover", cat: "Diagnostic", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=800" }
+                            ].map((p, i) => (
+                                <motion.div key={i} {...fadeInUp} transition={{ delay: i * 0.1 }} className="group relative aspect-[4/5] overflow-hidden bg-slate-900 border border-white/5">
+                                    <img 
+                                        src={p.img} 
+                                        alt={p.title} 
+                                        className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-8 flex flex-col justify-end text-white">
+                                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-2">{p.cat}</p>
+                                        <h3 className="font-display text-2xl font-black uppercase leading-tight">{p.title}</h3>
+                                    </div>
+                                </motion.div>
                             ))
                         )}
                     </div>
@@ -459,8 +473,8 @@ export default function Home({
                             ))}
                         </div>
 
-                        <div className="aspect-video w-full bg-slate-100 grayscale dark:bg-white/5">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" alt="Office" className="h-full w-full object-cover opacity-50" />
+                        <div className="aspect-video w-full bg-slate-900 border border-white/5">
+                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200" alt="Office" className="h-full w-full object-cover opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
                         </div>
                     </div>
 
