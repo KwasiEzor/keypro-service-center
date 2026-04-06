@@ -21,7 +21,7 @@ const fadeInUp = {
 export default function Diagnostic() {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Diagnostic Électronique & Expertise — KeyPro Service Center" />
+            <Head title="Mécanicien Électronique & Diagnostic Automobile — KeyPro Service Center" />
 
             {/* Header Section */}
             <section className="relative -mx-6 bg-[#131313] py-24 px-6 text-white lg:-mx-8 lg:px-8">

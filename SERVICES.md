@@ -6,59 +6,57 @@
 ---
 
 ## 🧭 Positionnement
-KEYPRO SERVICE CENTER est un centre technique spécialisé dans les clés automobiles et l’électronique embarquée.
+KEYPRO SERVICE CENTER est un centre technique spécialisé dans l'électronique automobile avancée, la programmation et la formation.
 
 Le garage se positionne comme :
-- un expert en clés auto et télécommandes
-- un technicien automobile mobile
-- un spécialiste multi-marques
-- un prestataire moderne combinant technologie et service client
+- un expert en mécanicien électronique
+- un spécialiste en programmation automobile (mémoire véhicules)
+- un distributeur de solutions techniques (clés, scanners, machines)
+- un centre de formation pour professionnels
+- un prestataire hybride (atelier et distance)
 
 ---
 
 ## 🚗 Activité principale
 Le garage propose des services liés à :
-- la reproduction et programmation de clés auto
-- la réparation de télécommandes et systèmes électroniques
-- le diagnostic automobile
-- l’assistance automobile mobile
-- la gestion des problèmes liés aux clés et à l’électronique véhicule
+- la mécanique électronique et diagnostic profond
+- la programmation de calculateurs et mémoires véhicules
+- la vente de matériel professionnel (scanners, machines de programmation)
+- la formation technique spécialisée
+- l'assistance technique à distance et en atelier
 
 ---
 
 ## 🎯 Mission
-Fournir des solutions rapides, fiables et accessibles pour tous les problèmes liés aux clés automobiles et aux systèmes électroniques des véhicules.
+Fournir une expertise de pointe en électronique automobile et autonomiser les professionnels du secteur via le matériel et la formation.
 
 ---
 
 ## 👁️ Vision
-Devenir une référence locale en :
-- services automobiles modernes
-- assistance technique mobile
-- solutions intelligentes intégrant l’IA et la digitalisation
+Devenir le leader régional de l'ingénierie électronique automobile et du transfert de compétences techniques.
 
 ---
 
 ## 💡 Valeurs
-- 🔧 Expertise technique
-- ⚡ Rapidité d’intervention
-- 🤝 Fiabilité et transparence
-- 📱 Innovation (IA, digital, automatisation)
-- 🚗 Service multi-marques
+- 🔧 Haute expertise technique
+- ⚡ Agilité (atelier & distance)
+- 🎓 Transmission du savoir (Formations)
+- 🛠️ Équipement de pointe (Ventes)
+- 🤝 Accompagnement professionnel
 
 ---
 
-## 🧑‍🔧 Types de services
-- Intervention en atelier
-- Intervention mobile (domicile / sur site)
-- Assistance urgente
-- Diagnostic technique
+## 🧑‍🔧 Types d'interventions
+- Intervention en atelier (Abidjan)
+- Intervention à distance (Prise en main sécurisée)
+- Sessions de formation (Individuelles / Groupes)
+- Support technique après-vente
 
 ---
 
 ## 🌍 Couverture
-- Zone locale (à définir)
-- Intervention mobile dans plusieurs zones
+- Intervention physique (Abidjan et zones mobiles)
+- Intervention digitale (International / À distance)
 
 ---
 
@@ -70,56 +68,52 @@ Devenir une référence locale en :
 
 ---
 
-## ⏱️ Horaires (à adapter)
+## ⏱️ Horaires
 - Lundi – Samedi : 08h00 – 19h00  
-- Dimanche : Urgence uniquement  
+- Dimanche : Sur rendez-vous / Urgence  
 
 ---
 
-## 🔑 Spécialités
-- Clés auto (duplication & programmation)
-- Smart keys (clés intelligentes)
-- Télécommandes
-- Diagnostic électronique
-- Codage et programmation véhicule
-- Assistance automobile mobile
+## 🔑 Spécialités (Métiers)
+- **Mécanicien Électronique** : Analyse et réparation des systèmes embarqués.
+- **Programmation Automobile** : Codage et flashage des mémoires calculateurs.
+- **Ventes Solutions** : Clés, scanners, machines de programmation.
+- **Formations** : Transfert de compétences sur les outils et méthodes modernes.
+- **Interventions Hybrides** : À distance ou directement en atelier.
 
 ---
 
 ## 🏷️ Marques supportées
-- Japonaises
-- Européennes
-- Américaines
-- Chinoises
-
-Compatible avec la majorité des véhicules modernes.
+- Japonaises (Toyota, Nissan, Honda...)
+- Européennes (Mercedes, BMW, Audi, Peugeot...)
+- Américaines (Ford, Chevrolet, Jeep...)
+- Chinoises (Haval, BYD, Geely...)
 
 ---
 
 ## 🤖 Innovation digitale
 KEYPRO intègre des solutions modernes :
-- chatbot intelligent pour les demandes clients
-- prise de rendez-vous automatisée
-- notifications en temps réel
-- gestion digitale des interventions
+- diagnostic à distance via passerelles sécurisées
+- plateforme de formation digitale
+- chatbot intelligent pour le support technique
+- boutique en ligne de matériel spécialisé (en développement)
 
 ---
 
 ## 🚀 Avantages concurrentiels
-- Intervention rapide sur site
-- Expertise technique spécialisée
-- Support multi-marques
-- Outils modernes de diagnostic et programmation
-- Expérience client simplifiée grâce au digital
+- Capacité d'intervention à distance sans déplacement
+- Unique centre combinant service, vente et formation
+- Expertise certifiée sur les calculateurs de dernière génération
+- Outils de programmation propriétaires et partenaires
 
 ---
 
 ## 🧠 Résumé
-**Clés auto • Programmation • Diagnostic • Assistance mobile • Toutes marques • Intervention rapide**
+**Mécanicien Électronique • Programmation • Vente Matériel • Formations • Atelier & Distance**
 
 ---
 
 ## 💬 Version marketing
-**Besoin d’une clé auto, d’un diagnostic ou d’une intervention rapide ?**  
-KEYPRO SERVICE CENTER vous accompagne avec expertise, rapidité et technologie moderne.  
-Intervention sur site, toutes marques, solutions fiables.
+**L'expertise électronique automobile sans frontières.**  
+KEYPRO SERVICE CENTER : De la réparation à la programmation, du matériel à la formation.  
+Intervention en atelier ou à distance, solutions pro pour véhicules modernes.

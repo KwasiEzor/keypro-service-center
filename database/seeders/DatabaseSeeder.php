@@ -29,12 +29,31 @@ class DatabaseSeeder extends Seeder
 
         // Real Services
         $serviceData = [
-            ['name' => 'Reproduction de Clés', 'short' => 'Duplication et programmation de clés auto toutes marques.', 'desc' => 'Service expert pour la reproduction de clés simples ou à puce. Nous utilisons du matériel de précision pour garantir une compatibilité totale avec votre véhicule.'],
-            ['name' => 'Smart Keys & Keyless', 'short' => 'Programmation de clés intelligentes et systèmes mains libres.', 'desc' => 'Spécialiste des clés de dernière génération (Start/Stop, Keyless Go). Programmation sécurisée et réinitialisation des anciens codes.'],
-            ['name' => 'Diagnostic Électronique', 'short' => 'Analyse complète des systèmes embarqués et lecture de codes défauts.', 'desc' => 'Utilisation de valises de diagnostic multimarques pour identifier précisément l\'origine de vos pannes électroniques et mécaniques.'],
-            ['name' => 'Réparation Télécommandes', 'short' => 'Réfection de boitiers, changement de piles et réparation de circuits.', 'desc' => 'Votre télécommande ne répond plus ? Nous réparons les circuits imprimés, changeons les coques usées et les boutons défectueux.'],
-            ['name' => 'Assistance Mobile 24/7', 'short' => 'Intervention rapide sur le lieu de votre panne à Abidjan.', 'desc' => 'Technicien mobile déployé pour l\'ouverture de porte ou la programmation de clé sur place. Réponse urgente garantie.'],
-            ['name' => 'Codage & Programmation', 'short' => 'Mise à jour de modules et codage de calculateurs véhicule.', 'desc' => 'Programmation de nouveaux calculateurs, adaptation de modules d\'occasion et activation d\'options constructeur.'],
+            [
+                'name' => 'Mécanicien Électronique',
+                'short' => 'Diagnostic et réparation des systèmes électroniques embarqués.',
+                'desc' => 'Expertise avancée en électronique automobile. Nous intervenons sur les calculateurs (ECU), les réseaux multiplexés et tous les composants électroniques critiques de votre véhicule.'
+            ],
+            [
+                'name' => 'Programmation Automobile',
+                'short' => 'Programmation (mémoire véhicules) : codage, adaptation et mise à jour.',
+                'desc' => 'Service de programmation profonde des mémoires flash et EEPROM. Nous réalisons l\'adaptation de modules, la mise à jour des firmwares constructeurs et la personnalisation des options véhicule.'
+            ],
+            [
+                'name' => 'Vente & Solutions Clés',
+                'short' => 'Vente de clés, scanners, machines de programmation et programmation clés.',
+                'desc' => 'Large gamme de clés vierges, scanners de diagnostic multimarques et machines de programmation de pointe. Nous proposons également un service complet de programmation pour accompagner vos achats d\'équipements.'
+            ],
+            [
+                'name' => 'Formations Techniques',
+                'short' => 'Sessions de formation sur le diagnostic et la programmation auto.',
+                'desc' => 'Transfert de compétences pour les professionnels : diagnostic électronique, usage des outils de programmation et techniques de réparation des systèmes embarqués modernes.'
+            ],
+            [
+                'name' => 'Interventions Hybrides',
+                'short' => 'Assistance technique flexible : à distance ou directement en atelier.',
+                'desc' => 'Profitez de notre expertise où que vous soyez grâce à nos solutions d\'intervention à distance ou venez nous rencontrer dans notre atelier spécialisé pour une prise en charge complète.'
+            ],
         ];
 
         $services = [];
@@ -45,9 +64,9 @@ class DatabaseSeeder extends Seeder
                 'short_description' => $data['short'],
                 'description' => $data['desc'],
                 'is_active' => true,
-                'is_featured' => $index < 3,
+                'is_featured' => true,
                 'sort_order' => $index,
-                'turnaround_time' => $index === 4 ? '45 min' : '1-2 heures',
+                'turnaround_time' => '1-2 heures',
             ]);
         }
 

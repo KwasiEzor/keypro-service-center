@@ -456,7 +456,7 @@ export default function Home({
                                 Prêt à restaurer <span className="text-primary">votre matériel ?</span>
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400">
-                                Reproduction de clés, diagnostic électronique ou intervention mobile urgente. Remplissez le formulaire, nous vous recontactons sous 24h.
+                                Programmation automobile, mécanicien électronique ou interventions à distance. Remplissez le formulaire, nous vous recontactons sous 24h.
                             </p>
                         </div>
 
