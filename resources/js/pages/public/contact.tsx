@@ -19,7 +19,11 @@ type Props = {
 export default function Contact({ leadOptions, services }: Props) {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Diagnostic & Devis Technique" />
+            <Head title="Diagnostic & Devis Technique">
+                <meta name="description" content="Demandez un diagnostic automobile ou un devis technique en ligne. Réponse sous 24h par nos experts en électronique automobile à Abidjan." />
+                <meta property="og:title" content="Contact & Devis — KeyPro Service Center" />
+                <meta property="og:description" content="Formulaire de demande de diagnostic et devis technique. Intervention rapide en atelier ou à domicile." />
+            </Head>
 
             {/* Header Section */}
             <section className="relative -mx-6 bg-[#131313] py-24 px-6 text-white lg:-mx-8 lg:px-8">

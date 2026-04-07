@@ -29,6 +29,11 @@ export default function LeadCaptureForm({
         >
             {({ errors, processing, wasSuccessful }) => (
                 <>
+                    {/* Honeypot anti-spam field — hidden from real users */}
+                    <div className="absolute -left-[9999px]" aria-hidden="true">
+                        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                    </div>
+
                     <div className="grid gap-6 md:grid-cols-2">
                         <div className="grid gap-2">
                             <Label htmlFor="full_name" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Nom complet</Label>
@@ -58,7 +63,7 @@ export default function LeadCaptureForm({
                             <Input
                                 id="phone"
                                 name="phone"
-                                placeholder="+33 6 12 34 56 78"
+                                placeholder="+225 07 12 34 56 78"
                                 className="h-12 rounded-none border-2 border-slate-200 bg-white focus:border-primary focus:ring-0 dark:border-white/10 dark:bg-white/5"
                             />
                             <InputError message={errors.phone} />

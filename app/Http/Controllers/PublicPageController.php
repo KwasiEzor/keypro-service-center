@@ -12,6 +12,7 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\Testimonial;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -83,6 +84,11 @@ class PublicPageController extends Controller
 
     public function storeLead(StoreLeadRequest $request): RedirectResponse
     {
+        // Honeypot anti-spam: if the hidden "website" field is filled, silently reject
+        if ($request->filled('website')) {
+            return back()->with('status', 'Votre demande a bien ete recue. Un conseiller vous recontactera rapidement.');
+        }
+
         Lead::create([
             ...$request->validated(),
             'status' => 'new',
@@ -97,7 +103,9 @@ class PublicPageController extends Controller
      */
     private function servicesCollection(bool $featuredOnly = false): array
     {
-        return Service::query()
+        $cacheKey = 'public.services'.($featuredOnly ? '.featured' : '.all');
+
+        return Cache::remember($cacheKey, 300, fn () => Service::query()
             ->where('is_active', true)
             ->when($featuredOnly, fn ($query) => $query->where('is_featured', true))
             ->with(['brands:id,name,slug'])
@@ -119,7 +127,7 @@ class PublicPageController extends Controller
                     ])
                     ->all(),
             ])
-            ->all();
+            ->all());
     }
 
     /**
@@ -127,7 +135,9 @@ class PublicPageController extends Controller
      */
     private function brandsCollection(bool $featuredOnly = false): array
     {
-        return Brand::query()
+        $cacheKey = 'public.brands'.($featuredOnly ? '.featured' : '.all');
+
+        return Cache::remember($cacheKey, 300, fn () => Brand::query()
             ->where('is_active', true)
             ->when($featuredOnly, fn ($query) => $query->where('is_featured', true))
             ->with(['services:id,name,slug'])
@@ -148,7 +158,7 @@ class PublicPageController extends Controller
                     ])
                     ->all(),
             ])
-            ->all();
+            ->all());
     }
 
     /**
@@ -156,7 +166,9 @@ class PublicPageController extends Controller
      */
     private function faqsCollection(?int $limit = null): array
     {
-        return Faq::query()
+        $cacheKey = 'public.faqs'.($limit !== null ? ".limit.{$limit}" : '.all');
+
+        return Cache::remember($cacheKey, 300, fn () => Faq::query()
             ->where('is_published', true)
             ->orderBy('sort_order')
             ->orderBy('question')
@@ -167,7 +179,7 @@ class PublicPageController extends Controller
                 'question' => $faq->question,
                 'answer' => $faq->answer,
             ])
-            ->all();
+            ->all());
     }
 
     /**
@@ -241,7 +253,7 @@ class PublicPageController extends Controller
      */
     private function leadOptions(): array
     {
-        return [
+        return Cache::remember('public.lead-options', 300, fn () => [
             'services' => Service::query()
                 ->where('is_active', true)
                 ->orderBy('sort_order')
@@ -262,6 +274,6 @@ class PublicPageController extends Controller
                     'name' => $brand->name,
                 ])
                 ->all(),
-        ];
+        ]);
     }
 }

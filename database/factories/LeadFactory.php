@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\LeadStatus;
 use App\Models\Brand;
 use App\Models\Lead;
 use App\Models\Service;
@@ -26,10 +27,10 @@ class LeadFactory extends Factory
             'email' => fake()->safeEmail(),
             'phone' => fake()->e164PhoneNumber(),
             'company' => fake()->company(),
-            'device_model' => fake()->randomElement(['MacBook Pro', 'iPhone 15', 'Galaxy S24', 'ThinkPad X1']),
+            'device_model' => fake()->randomElement(['Toyota Corolla', 'Mercedes C200', 'BMW X5', 'Peugeot 3008']),
             'message' => fake()->paragraphs(2, true),
             'preferred_contact_method' => fake()->randomElement(['email', 'phone']),
-            'status' => 'new',
+            'status' => LeadStatus::New,
             'source' => 'website',
             'metadata' => ['urgency' => fake()->randomElement(['standard', 'urgent'])],
             'contacted_at' => null,

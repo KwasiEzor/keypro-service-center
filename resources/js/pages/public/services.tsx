@@ -26,7 +26,11 @@ type Props = {
 export default function Services({ services, brands }: Props) {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Catalogue des Services Techniques" />
+            <Head title="Catalogue des Services Techniques">
+                <meta name="description" content="Mécanicien électronique, programmation automobile, vente de clés et scanners, formations techniques. Découvrez tous les services KeyPro à Abidjan." />
+                <meta property="og:title" content="Services — KeyPro Service Center" />
+                <meta property="og:description" content="Catalogue complet des services techniques KeyPro : diagnostic, programmation, vente d'équipements et formations professionnelles." />
+            </Head>
 
             {/* Header Section */}
             <section className="relative -mx-6 bg-[#131313] py-24 px-6 text-white lg:-mx-8 lg:px-8">

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\LeadStatus;
 use Database\Factories\LeadFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -38,6 +39,7 @@ class Lead extends Model
         return [
             'metadata' => 'array',
             'contacted_at' => 'datetime',
+            'status' => LeadStatus::class,
         ];
     }
 }

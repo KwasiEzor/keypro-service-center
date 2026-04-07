@@ -67,7 +67,40 @@ export default function PublicLayout({
                     href="https://fonts.bunny.net/css?family=space-grotesk:400,500,700|instrument-sans:400,500,600"
                     rel="stylesheet"
                 />
+                <meta name="robots" content="index, follow" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="KeyPro Service Center" />
+                <meta property="og:locale" content="fr_CI" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "AutoRepair",
+                    "name": "KeyPro Service Center",
+                    "description": "Centre technique spécialisé en électronique automobile, programmation et formation à Abidjan.",
+                    "url": window.location.origin,
+                    "telephone": ["+22572114444", "+22598488844", "+22522466626"],
+                    "email": "garagelaredemption@gmail.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Abidjan",
+                        "addressCountry": "CI"
+                    },
+                    "openingHoursSpecification": [
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "19:00" },
+                        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "00:00", "closes": "00:00", "description": "Sur rendez-vous / Urgence" }
+                    ],
+                    "areaServed": { "@type": "City", "name": "Abidjan" },
+                    "priceRange": "$$"
+                })}</script>
             </Head>
+
+            {/* Skip to content link for keyboard accessibility */}
+            <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+            >
+                Aller au contenu principal
+            </a>
 
             <div className="relative">
                 <header className="sticky top-0 z-50 border-b-2 border-primary/10 bg-white/80 backdrop-blur-md dark:border-white/5 dark:bg-[#0a0a0a]/80">
@@ -172,7 +205,7 @@ export default function PublicLayout({
                     </div>
                 )}
 
-                <main className="flex flex-col">
+                <main id="main-content" className="flex flex-col">
                     {children}
                 </main>
             </div>

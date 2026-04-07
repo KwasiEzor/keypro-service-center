@@ -25,7 +25,11 @@ const fadeInUp = {
 export default function About() {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Qui Sommes-Nous — KeyPro Service Center" />
+            <Head title="Qui Sommes-Nous — KeyPro Service Center">
+                <meta name="description" content="Découvrez KeyPro Service Center : centre technique de référence spécialisé en clés automobiles haute sécurité et électronique embarquée à Abidjan, Côte d'Ivoire." />
+                <meta property="og:title" content="À Propos — KeyPro Service Center" />
+                <meta property="og:description" content="Notre mission, notre vision et nos valeurs. Expertise technique, rapidité, fiabilité et innovation au service de votre mobilité." />
+            </Head>
 
             {/* Header Section */}
             <section className="relative -mx-6 bg-[#131313] py-24 px-6 text-white lg:-mx-8 lg:px-8">

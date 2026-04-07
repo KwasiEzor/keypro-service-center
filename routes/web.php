@@ -14,11 +14,11 @@ Route::controller(PublicPageController::class)->group(function () {
     Route::get('/diagnostic-technique', 'diagnostic')->name('diagnostic');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/quote', 'contact')->name('quote');
-    Route::post('/quote', 'storeLead')->name('leads.store');
+    Route::post('/quote', 'storeLead')->name('leads.store')->middleware('throttle:5,1');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/interventions', [DashboardController::class, 'leads'])->name('dashboard.leads');
     Route::get('/rendez-vous', [DashboardController::class, 'appointments'])->name('dashboard.appointments');
 });

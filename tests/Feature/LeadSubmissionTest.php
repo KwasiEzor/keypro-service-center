@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\LeadStatus;
 use App\Models\Brand;
 use App\Models\Lead;
 use App\Models\Service;
@@ -35,7 +36,7 @@ test('visitors can submit a lead request', function () {
 
     expect($lead->service_id)->toBe($service->id)
         ->and($lead->brand_id)->toBe($brand->id)
-        ->and($lead->status)->toBe('new')
+        ->and($lead->status)->toBe(LeadStatus::New)
         ->and($lead->source)->toBe('website')
         ->and($lead->preferred_contact_method)->toBe('phone');
 });

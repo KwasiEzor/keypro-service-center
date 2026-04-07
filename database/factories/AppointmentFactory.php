@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\AppointmentStatus;
 use App\Models\Appointment;
 use App\Models\Brand;
 use App\Models\Lead;
@@ -25,7 +26,7 @@ class AppointmentFactory extends Factory
             'service_id' => Service::factory(),
             'brand_id' => Brand::factory(),
             'scheduled_for' => fake()->dateTimeBetween('+1 day', '+2 weeks'),
-            'status' => fake()->randomElement(['draft', 'pending', 'confirmed']),
+            'status' => fake()->randomElement([AppointmentStatus::Pending, AppointmentStatus::Confirmed]),
             'notes' => fake()->sentence(),
         ];
     }

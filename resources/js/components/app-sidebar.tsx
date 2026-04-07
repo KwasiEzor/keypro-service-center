@@ -13,23 +13,25 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import App from '../actions/App';
+import { dashboard, contact } from '@/routes';
+import { leads, appointments } from '@/routes/dashboard';
+import { index as servicesIndex } from '@/routes/services';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Vue d\'ensemble',
-        href: App.Http.Controllers.DashboardController.index().url,
+        href: dashboard().url,
         icon: LayoutGrid,
     },
     {
         title: 'Mes Interventions',
-        href: App.Http.Controllers.DashboardController.leads().url,
+        href: leads().url,
         icon: Wrench,
     },
     {
         title: 'Mes Rendez-vous',
-        href: App.Http.Controllers.DashboardController.appointments().url,
+        href: appointments().url,
         icon: Calendar,
     },
 ];
@@ -37,12 +39,12 @@ const mainNavItems: NavItem[] = [
 const footerNavItems: NavItem[] = [
     {
         title: 'Support Technique',
-        href: App.Http.Controllers.PublicPageController.contact['/contact']().url,
+        href: contact().url,
         icon: LifeBuoy,
     },
     {
         title: 'Catalogue Services',
-        href: App.Http.Controllers.PublicPageController.services().url,
+        href: servicesIndex().url,
         icon: FileText,
     },
 ];
@@ -54,7 +56,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href={App.Http.Controllers.DashboardController.index().url} prefetch>
+                            <Link href={dashboard()} prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>

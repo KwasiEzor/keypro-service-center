@@ -70,7 +70,11 @@ export default function Home({
 }: Props) {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Centre de Service Professionnel" />
+            <Head title="Centre de Service Professionnel — Électronique Automobile à Abidjan">
+                <meta name="description" content="KeyPro Service Center : expert en mécanicien électronique, programmation automobile, vente de matériel et formations techniques à Abidjan, Côte d'Ivoire. Intervention en atelier ou à distance." />
+                <meta property="og:title" content="KeyPro Service Center — Électronique Automobile" />
+                <meta property="og:description" content="Centre technique spécialisé en électronique automobile, programmation et formation. Intervention en atelier ou à distance à Abidjan." />
+            </Head>
 
             {/* Hero Section */}
             <section className="relative -mx-6 flex min-h-[85vh] items-center overflow-hidden bg-[#131313] px-6 text-white lg:-mx-8 lg:px-8">

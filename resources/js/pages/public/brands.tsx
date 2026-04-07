@@ -26,7 +26,11 @@ type Props = {
 export default function Brands({ brands }: Props) {
     return (
         <div className="flex flex-col gap-24 pb-24">
-            <Head title="Marques Supportées & Compatibilité" />
+            <Head title="Marques Supportées & Compatibilité">
+                <meta name="description" content="KeyPro supporte les marques Japonaises, Européennes, Américaines et Chinoises. Diagnostic et programmation certifiés constructeurs à Abidjan." />
+                <meta property="og:title" content="Marques Supportées — KeyPro Service Center" />
+                <meta property="og:description" content="Expertise multi-marques : Toyota, Mercedes, BMW, Ford, BYD et plus. Intervention certifiée constructeur." />
+            </Head>
 
             {/* Header Section */}
             <section className="relative -mx-6 bg-[#131313] py-24 px-6 text-white lg:-mx-8 lg:px-8">
