@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\PricingPlanFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 #[Fillable(['name', 'price', 'description', 'features', 'is_featured', 'sort_order'])]
 class PricingPlan extends Model
 {
-    /** @use HasFactory<\Database\Factories\PricingPlanFactory> */
+    /** @use HasFactory<PricingPlanFactory> */
     use HasFactory;
 
     /**

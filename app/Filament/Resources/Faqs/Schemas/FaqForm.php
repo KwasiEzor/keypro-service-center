@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Faqs\Schemas;
 
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -15,7 +15,7 @@ class FaqForm
             ->components([
                 TextInput::make('question')
                     ->required(),
-                Textarea::make('answer')
+                RichEditor::make('answer')
                     ->required()
                     ->columnSpanFull(),
                 Toggle::make('is_published')

@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Brands\Schemas;
 
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -18,7 +18,7 @@ class BrandForm
                 TextInput::make('slug')
                     ->required(),
                 TextInput::make('headline'),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
                 Toggle::make('is_featured')
                     ->required(),

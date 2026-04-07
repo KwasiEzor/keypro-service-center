@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { LayoutGrid, Wrench, Calendar, LifeBuoy, FileText } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -13,27 +13,37 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import App from '../actions/App';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
-        href: dashboard(),
+        title: 'Vue d\'ensemble',
+        href: App.Http.Controllers.DashboardController.index().url,
         icon: LayoutGrid,
+    },
+    {
+        title: 'Mes Interventions',
+        href: App.Http.Controllers.DashboardController.leads().url,
+        icon: Wrench,
+    },
+    {
+        title: 'Mes Rendez-vous',
+        href: App.Http.Controllers.DashboardController.appointments().url,
+        icon: Calendar,
     },
 ];
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: FolderGit2,
+        title: 'Support Technique',
+        href: App.Http.Controllers.PublicPageController.contact['/contact']().url,
+        icon: LifeBuoy,
     },
     {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
+        title: 'Catalogue Services',
+        href: App.Http.Controllers.PublicPageController.services().url,
+        icon: FileText,
     },
 ];
 
@@ -44,7 +54,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href={dashboard()} prefetch>
+                            <Link href={App.Http.Controllers.DashboardController.index().url} prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>

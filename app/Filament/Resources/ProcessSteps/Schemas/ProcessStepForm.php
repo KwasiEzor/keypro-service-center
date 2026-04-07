@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\ProcessSteps\Schemas;
 
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class ProcessStepForm
@@ -14,7 +14,7 @@ class ProcessStepForm
             ->components([
                 TextInput::make('title')
                     ->required(),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
                 TextInput::make('icon'),
                 TextInput::make('sort_order')

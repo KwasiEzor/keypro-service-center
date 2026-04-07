@@ -6,7 +6,6 @@ use App\Models\Brand;
 use App\Models\Faq;
 use App\Models\PricingPlan;
 use App\Models\ProcessStep;
-use App\Models\Project;
 use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -32,27 +31,27 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Mécanicien Électronique',
                 'short' => 'Diagnostic et réparation des systèmes électroniques embarqués.',
-                'desc' => 'Expertise avancée en électronique automobile. Nous intervenons sur les calculateurs (ECU), les réseaux multiplexés et tous les composants électroniques critiques de votre véhicule.'
+                'desc' => 'Expertise avancée en électronique automobile. Nous intervenons sur les calculateurs (ECU), les réseaux multiplexés et tous les composants électroniques critiques de votre véhicule.',
             ],
             [
                 'name' => 'Programmation Automobile',
                 'short' => 'Programmation (mémoire véhicules) : codage, adaptation et mise à jour.',
-                'desc' => 'Service de programmation profonde des mémoires flash et EEPROM. Nous réalisons l\'adaptation de modules, la mise à jour des firmwares constructeurs et la personnalisation des options véhicule.'
+                'desc' => 'Service de programmation profonde des mémoires flash et EEPROM. Nous réalisons l\'adaptation de modules, la mise à jour des firmwares constructeurs et la personnalisation des options véhicule.',
             ],
             [
                 'name' => 'Vente & Solutions Clés',
                 'short' => 'Vente de clés, scanners, machines de programmation et programmation clés.',
-                'desc' => 'Large gamme de clés vierges, scanners de diagnostic multimarques et machines de programmation de pointe. Nous proposons également un service complet de programmation pour accompagner vos achats d\'équipements.'
+                'desc' => 'Large gamme de clés vierges, scanners de diagnostic multimarques et machines de programmation de pointe. Nous proposons également un service complet de programmation pour accompagner vos achats d\'équipements.',
             ],
             [
                 'name' => 'Formations Techniques',
                 'short' => 'Sessions de formation sur le diagnostic et la programmation auto.',
-                'desc' => 'Transfert de compétences pour les professionnels : diagnostic électronique, usage des outils de programmation et techniques de réparation des systèmes embarqués modernes.'
+                'desc' => 'Transfert de compétences pour les professionnels : diagnostic électronique, usage des outils de programmation et techniques de réparation des systèmes embarqués modernes.',
             ],
             [
                 'name' => 'Interventions Hybrides',
                 'short' => 'Assistance technique flexible : à distance ou directement en atelier.',
-                'desc' => 'Profitez de notre expertise où que vous soyez grâce à nos solutions d\'intervention à distance ou venez nous rencontrer dans notre atelier spécialisé pour une prise en charge complète.'
+                'desc' => 'Profitez de notre expertise où que vous soyez grâce à nos solutions d\'intervention à distance ou venez nous rencontrer dans notre atelier spécialisé pour une prise en charge complète.',
             ],
         ];
 
@@ -87,7 +86,7 @@ class DatabaseSeeder extends Seeder
                 'is_active' => true,
                 'is_featured' => true,
             ]);
-            
+
             // Attach all services to these main categories
             $brand->services()->attach(collect($services)->pluck('id')->all());
         }

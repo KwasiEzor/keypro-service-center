@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\ProjectFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\Sluggable\SlugOptions;
 #[Fillable(['title', 'slug', 'description', 'category', 'client_name', 'completion_date', 'is_featured'])]
 class Project extends Model implements HasMedia
 {
-    /** @use HasFactory<\Database\Factories\ProjectFactory> */
+    /** @use HasFactory<ProjectFactory> */
     use HasFactory, HasSlug, InteractsWithMedia;
 
     public function getSlugOptions(): SlugOptions

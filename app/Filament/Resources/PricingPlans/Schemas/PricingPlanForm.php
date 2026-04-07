@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\PricingPlans\Schemas;
 
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -16,7 +17,7 @@ class PricingPlanForm
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('price'),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
                 Textarea::make('features')
                     ->columnSpanFull(),

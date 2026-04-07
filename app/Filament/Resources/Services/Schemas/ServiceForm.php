@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Services\Schemas;
 
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -18,7 +18,7 @@ class ServiceForm
                 TextInput::make('slug')
                     ->required(),
                 TextInput::make('short_description'),
-                Textarea::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull(),
                 TextInput::make('turnaround_time'),
                 Toggle::make('is_featured')

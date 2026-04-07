@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PublicPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,10 @@ Route::controller(PublicPageController::class)->group(function () {
     Route::post('/quote', 'storeLead')->name('leads.store');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::inertia('dashboard', 'dashboard')->name('dashboard');
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/interventions', [DashboardController::class, 'leads'])->name('dashboard.leads');
+    Route::get('/rendez-vous', [DashboardController::class, 'appointments'])->name('dashboard.appointments');
 });
 
 require __DIR__.'/settings.php';

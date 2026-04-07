@@ -6,12 +6,11 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
@@ -29,8 +28,25 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => [
+                    50 => '254, 242, 242',
+                    100 => '254, 226, 226',
+                    200 => '254, 190, 190',
+                    300 => '252, 165, 165',
+                    400 => '248, 113, 113',
+                    500 => '224, 30, 47', // KeyPro Red #e01e2f
+                    600 => '200, 20, 35',
+                    700 => '185, 28, 28',
+                    800 => '153, 27, 27',
+                    900 => '127, 29, 29',
+                    950 => '69, 10, 10',
+                ],
+                'gray' => Color::Slate,
             ])
+            ->font('Inter')
+            ->brandName('KeyPro Service Center')
+            // Using a simple text for brand for now, or you can add a path to SVG
+            ->favicon(asset('favicon.svg'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -38,8 +54,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                // We'll replace these with custom stats widgets
+            ])
+            ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
+            ->breadcrumbs(true)
+            ->globalSearch(true)
+            ->userMenuItems([
+                'profile' => MenuItem::make()->label('Mon Profil'),
             ])
             ->middleware([
                 EncryptCookies::class,
