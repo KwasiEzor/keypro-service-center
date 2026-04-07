@@ -7,6 +7,8 @@ import {
     Menu
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import WhatsAppFloatingButton from '@/components/whatsapp-floating-button';
 import AppLogoIcon from '@/components/app-logo-icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,7 +19,16 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from '@/lib/utils';
-import { dashboard, home, login, quote, about, mobile, diagnostic } from '@/routes';
+import { 
+    dashboard, 
+    home, 
+    login, 
+    quote, 
+    about, 
+    mobile, 
+    diagnostic,
+} from '@/routes';
+import { cgv, mentions, privacy } from '@/routes/legal';
 import { index as brandsIndex } from '@/routes/brands';
 import { index as faqIndex } from '@/routes/faq';
 import { index as servicesIndex } from '@/routes/services';
@@ -263,13 +274,14 @@ export default function PublicLayout({
                             © <span>{year ?? '...'}</span> KeyPro Service Center. Système Qualité Certifié.
                         </p>
                         <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
-                            <Link href="#" className="hover:text-primary">Mentions Légales</Link>
-                            <Link href="#" className="hover:text-primary">Confidentialité</Link>
-                            <Link href="#" className="hover:text-primary">Conditions</Link>
+                            <Link href={mentions()} className="hover:text-primary transition-colors">Mentions Légales</Link>
+                            <Link href={privacy()} className="hover:text-primary transition-colors">Confidentialité</Link>
+                            <Link href={cgv()} className="hover:text-primary transition-colors">Conditions</Link>
                         </div>
                     </div>
                 </div>
             </footer>
+            <WhatsAppFloatingButton />
         </div>
     );
 }

@@ -142,6 +142,24 @@ export default function Contact({ leadOptions, services }: Props) {
                     </div>
                 </div>
             </section>
+
+            {/* Map Section */}
+            <section className="container mx-auto max-w-7xl px-6 lg:px-8 pb-12">
+                <div className="overflow-hidden rounded-3xl border-4 border-slate-100 shadow-2xl dark:border-white/5 relative group">
+                    <div className="absolute inset-0 z-10 bg-primary/10 pointer-events-none group-hover:bg-primary/0 transition-colors duration-700" />
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127106.18255955142!2d-4.079219325!3d5.348443925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311459a51%3A0x78ab1b742ba0945!2sAbidjan%2C%20Ivory%20Coast!5e0!3m2!1sen!2sfr!4v1712466000000!5m2!1sen!2sfr"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0, filter: 'grayscale(0.6) contrast(1.2) invert(0)' }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Localisation KeyPro"
+                        className="grayscale hover:grayscale-0 transition-all duration-1000"
+                    ></iframe>
+                </div>
+            </section>
         </div>
     );
 }

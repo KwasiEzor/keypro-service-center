@@ -15,6 +15,11 @@ Route::controller(PublicPageController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/quote', 'contact')->name('quote');
     Route::post('/quote', 'storeLead')->name('leads.store')->middleware('throttle:5,1');
+
+    // Legal Pages
+    Route::get('/mentions-legales', 'mentionsLegales')->name('legal.mentions');
+    Route::get('/politique-confidentialite', 'privacyPolicy')->name('legal.privacy');
+    Route::get('/conditions-generales-vente', 'cgv')->name('legal.cgv');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {

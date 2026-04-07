@@ -62,13 +62,18 @@ class DashboardController extends Controller
     {
         $user = $request->user();
 
-        $leads = Lead::where('email', $user->email)
+        $leads = Lead::query()
+            ->where(function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                    ->orWhere('email', $user->email);
+            })
             ->with(['service', 'brand'])
             ->orderBy('created_at', 'desc')
             ->get();
 
         $appointments = Appointment::whereHas('lead', function ($query) use ($user) {
-            $query->where('email', $user->email);
+            $query->where('user_id', $user->id)
+                ->orWhere('email', $user->email);
         })
             ->with(['service', 'brand', 'lead'])
             ->orderBy('scheduled_for', 'asc')
@@ -99,7 +104,11 @@ class DashboardController extends Controller
     public function leads(Request $request): Response
     {
         $user = $request->user();
-        $leads = Lead::where('email', $user->email)
+        $leads = Lead::query()
+            ->where(function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                    ->orWhere('email', $user->email);
+            })
             ->with(['service', 'brand'])
             ->orderBy('created_at', 'desc')
             ->get();
@@ -122,7 +131,8 @@ class DashboardController extends Controller
     {
         $user = $request->user();
         $appointments = Appointment::whereHas('lead', function ($query) use ($user) {
-            $query->where('email', $user->email);
+            $query->where('user_id', $user->id)
+                ->orWhere('email', $user->email);
         })
             ->with(['service', 'brand', 'lead'])
             ->orderBy('scheduled_for', 'asc')

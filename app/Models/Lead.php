@@ -10,11 +10,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['service_id', 'brand_id', 'full_name', 'email', 'phone', 'company', 'device_model', 'message', 'preferred_contact_method', 'status', 'source', 'metadata', 'contacted_at'])]
+#[Fillable(['user_id', 'service_id', 'brand_id', 'full_name', 'email', 'phone', 'company', 'device_model', 'message', 'preferred_contact_method', 'status', 'source', 'metadata', 'contacted_at'])]
 class Lead extends Model
 {
     /** @use HasFactory<LeadFactory> */
     use HasFactory;
+
+    /**
+     * @return BelongsTo<User, Lead>
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function appointments(): HasMany
     {

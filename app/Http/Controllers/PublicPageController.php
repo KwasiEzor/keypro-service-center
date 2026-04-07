@@ -82,6 +82,21 @@ class PublicPageController extends Controller
         ]);
     }
 
+    public function mentionsLegales(): Response
+    {
+        return Inertia::render('public/legal/mentions-legales');
+    }
+
+    public function privacyPolicy(): Response
+    {
+        return Inertia::render('public/legal/politique-confidentialite');
+    }
+
+    public function cgv(): Response
+    {
+        return Inertia::render('public/legal/cgv');
+    }
+
     public function storeLead(StoreLeadRequest $request): RedirectResponse
     {
         // Honeypot anti-spam: if the hidden "website" field is filled, silently reject
@@ -91,6 +106,7 @@ class PublicPageController extends Controller
 
         Lead::create([
             ...$request->validated(),
+            'user_id' => auth()->id(),
             'status' => 'new',
             'source' => 'website',
         ]);
