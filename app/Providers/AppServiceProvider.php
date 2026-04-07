@@ -7,6 +7,9 @@ use App\Observers\LeadObserver;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
 
@@ -28,6 +31,11 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
 
         Lead::observe(LeadObserver::class);
+
+        Event::listen(
+            Registered::class,
+            SendEmailVerificationNotification::class,
+        );
     }
 
     /**
